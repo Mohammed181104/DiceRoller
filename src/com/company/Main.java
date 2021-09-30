@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Enter number of sides for your dice:");
         int diceSides = input.nextInt();
         System.out.println("How many rolls:");
-        int diceRolls = input.nextInt();
+        double diceRolls = input.nextDouble();
 
         int[] results = new int[diceSides];
 
@@ -24,6 +24,11 @@ public class Main {
             int roll = random.nextInt(diceSides);
             results[roll] = results[roll] + 1;
         }
-        System.out.println(Arrays.toString(results));
+        for(int j = 0; j < diceSides;j++){
+            double percent = results[j]/diceRolls*100;
+            int k = j+1;
+            System.out.println(k + " = "+percent+"%");
+        }
+        //System.out.println(Arrays.toString(results));
     }
 }
